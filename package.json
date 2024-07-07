@@ -1,13 +1,14 @@
 {
   "name": "project-maker",
   "displayName": "project-maker",
-  "description": "",
+  "publisher" : "jujinqian",
+  "description": "快速启动cmake项目",
   "version": "0.0.2",
   "engines": {
     "vscode": "^1.91.0"
   },
   "categories": [
-    "Other"
+    "Language Packs"
   ],
   "activationEvents": [],
   "main": "./out/extension.js",
