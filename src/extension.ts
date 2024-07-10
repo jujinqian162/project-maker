@@ -53,9 +53,8 @@ function add_mainFile(fspath : string, usecpp : boolean){
 
 function make_project_cmake(fspath: string, use_cpp : boolean){
 
-	var CMakeLists_txt_cpp = 
-`
-cmake_minimum_required(VERSION 3.29.0)
+	const CMakeLists_txt_cpp = 
+`cmake_minimum_required(VERSION 3.29.0)
 
 set(CXX_STANDARD ${cpp_standered})
 add_compile_options(-std=c++${cpp_standered})
@@ -66,12 +65,10 @@ link_directories($ENV{LIBPATH})
 
 
 add_executable(\${PROJECT_NAME} main.cpp)
-target_link_libraries(\${PROJECT_NAME} \${LIB})
-`
+target_link_libraries(\${PROJECT_NAME} \${LIB})`
 	
 	const CMakeLists_txt_c = 
-`
-cmake_minimum_required(VERSION 3.29.0)
+`cmake_minimum_required(VERSION 3.29.0)
 
 project(main)
 
@@ -79,11 +76,8 @@ include_directories($ENV{INCLUDE})
 link_directories($ENV{LIBPATH})
 
 add_executable(\${PROJECT_NAME} main.c)
-target_link_libraries(\${PROJECT_NAME} \${LIB})
-`
+target_link_libraries(\${PROJECT_NAME} \${LIB})`
 	
-	
-
 
 	const fs =  vscode.workspace.fs;
 	if (!fs) return;
